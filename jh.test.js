@@ -36,15 +36,11 @@ describe("Github page tests", () => {
   });
 });
 
-describe("Should  title for GitHub", () => {
-    test("Should page skills", async() => {
-      await page.goto("https://github.com/");
-      const link1 = await page.$("body > div.logged-out.env-production.page-responsive.header-overlay.home-campaign > footer > div.container-xl.p-responsive > div > div:nth-child(4) > ul > li:nth-child(4) > a");
-      await link1.click();
-      //const link2 = await page.$("body > div.logged-out.env-production.page-responsive.header-overlay.home-campaign > div.position-relative.js-header-wrapper > header > div > div.HeaderMenu--logged-out.p-responsive.height-fit.position-lg-relative.d-lg-flex.flex-column.flex-auto.pt-7.pb-4.top-0 > div > nav > ul > li:nth-child(3) > div > ul:nth-child(1) > li > a > div > div");
-      //await page.click("body > div.logged-out.env-production.page-responsive.header-overlay.home-campaign > div.position-relative.js-header-wrapper > header > div > div.HeaderMenu--logged-out.p-responsive.height-fit.position-lg-relative.d-lg-flex.flex-column.flex-auto.pt-7.pb-4.top-0 > div > nav > ul > li:nth-child(3) > div > ul:nth-child(1) > li > a > div > div");
-      const title2 = await page.waitForSelector("body > header > div > div.col-12.col-md-8.col-lg-7.p-responsive.pt-7.pb-9 > h1");
-      expect(title2).toEqual({});
+describe("Should  title Netology free", () => {
+    test("Should page free", async() => {
+      await page.goto("https://netology.ru/free");
+      const title = await page.title();
+      expect(title).toContain("Бесплатные онлайн курсы, вебинары и гайды – обучение в Нетологии");
     }, 50000);
   });
 
